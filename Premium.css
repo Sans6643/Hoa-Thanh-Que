@@ -1,0 +1,107 @@
+/* Premium.css
+   Styles for Premium.html - plan cards, layout, accessibility states
+*/
+:root{
+    --bg: #2b2b2b;
+    --card-bg: rgba(255,255,255,0.04);
+    --accent: #ffd28a;
+    --accent-2: #bfe9ff;
+    --muted: #cfcfcf;
+    --card-radius: 12px;
+}
+
+/* Page layout */
+html,body{
+    height:100%;
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,#1f1f1f 0%, #2f2f2f 100%);
+    color: #fff;
+}
+.premium-page{
+    max-width: 980px;
+    margin: 36px auto;
+    padding: 20px;
+}
+
+.premium-header h1{
+    margin: 0 0 6px 0;
+    font-size: 30px;
+    letter-spacing: -0.4px;
+}
+.premium-header p{
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Plans grid */
+.plans{
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+    align-items: stretch;
+}
+
+.plan-card{
+    flex: 1 1 0;
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 18px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+.plan-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.6);
+}
+
+.plan-card:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(191,233,255,0.12), 0 12px 28px rgba(0,0,0,0.6);
+    transform: translateY(-8px);
+}
+
+.plan-card h2{ margin: 0 0 8px 0; font-size: 18px; }
+.plan-card .price{ font-weight:700; color: var(--accent); margin-bottom: 8px }
+.plan-card ul{ margin: 8px 0 0 18px; color: var(--muted); }
+.plan-card ul li{ margin-bottom:6px }
+
+.plan-cta{
+    margin-top: 14px;
+    display: inline-block;
+    padding: 8px 12px;
+    background: linear-gradient(90deg,var(--accent-2), #dff6d8);
+    color: #000;
+    border-radius: 8px;
+    text-align: center;
+    font-weight:600;
+}
+
+/* selected state */
+.plan-card.selected{
+    background: linear-gradient(180deg, rgba(255,210,120,0.09), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,190,80,0.22);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 28px 54px rgba(0,0,0,0.6);
+}
+
+.plan-card.selected .price{ color: #ffdca1 }
+.plan-card.selected .plan-cta{ background: linear-gradient(90deg,#ffd28a,#ffb6b6); }
+
+.premium-note{ margin-top: 18px; color: #fff; font-size: 15px }
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 720px){
+    .plans{ flex-direction: column }
+    .plan-card{ width: 100%; }
+}
+
+/* Small helpers */
+.sr-only{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden }

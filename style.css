@@ -1,0 +1,106 @@
+@keyframes border-run{
+    0% {
+        background-position: 200% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.border-wrapper{
+    position: relative;
+    padding: 4px;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 900px;
+}
+
+.border-wrapper::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        #d5f5d1 0%,
+        #a9dafd 50%,
+        #d5f5d1 100%
+    );
+    background-size: 200% 100%;
+    animation: border-run 3s linear infinite;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vh;
+    background-color: rgb(73, 73, 73);
+}
+.containert{
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+    font-size: 20px;
+}  
+.language{
+    font-size: 20px;
+    margin-bottom: -10px;
+    margin-top: 10px;
+}
+.language a{
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.language a.selected{
+    background: linear-gradient(90deg, #ffd6a5 0%, #ffadad 100%);
+    color: #000;
+    -webkit-text-stroke: 0px #000;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transform: translateY(-2px);
+}
+
+.language a:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(170, 205, 255, 0.25);
+} 
+p{
+    font-size: 25px;
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+a:hover{
+    background-color: #e5b1fb;
+    transition: 0.3s;
+}
+span a{
+    border: none;
+    font-size: 25px;
+    font-weight: 600;
+}
+span a:hover{
+    background: none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Premium.css">
+</head>
+<body>
+    <main class="premium-page">
+        <section class="premium-header">
+            <h1>Đăng ký gói Premium</h1>
+            <p>Chọn gói phù hợp với bạn. Bạn có thể thay đổi sau trong phần cài đặt.</p>
+        </section>
+
+        <section class="plans" role="list" aria-label="Gói dịch vụ">
+            <article class="plan-card" data-plan="free" role="listitem" tabindex="0" aria-pressed="false">
+                <h2>Thanh Hóa</h2>
+                <ul>
+                    <li>Bạn là người Thanh Hóa à?</li>
+                    <li>Bạn có phải là người Thanh Hóa không?</li>
+                    <li>Quê bạn ở Thanh Hóa?</li>
+                </ul>
+                <div class="plan-cta">Chọn</div>
+            </article>
+
+            <article class="plan-card" data-plan="monthly" role="listitem" tabindex="0" aria-pressed="false">
+                <h2>Gói 36k/tháng</h2>
+                <ul>
+                    <li>Không quảng cáo</li>
+                    <li>Tốc độ ưu tiên</li>
+                    <li>Hỗ trợ email</li>
+                </ul>
+                <div class="plan-cta">Chọn</div>
+            </article>
+
+            <article class="plan-card" data-plan="yearly" role="listitem" tabindex="0" aria-pressed="false">
+                <h2>Gói 360k/năm</h2>
+                <ul>
+                    <li>Tiết kiệm hơn</li>
+                    <li>Tất cả tính năng Premium</li>
+                    <li>Hỗ trợ ưu tiên</li>
+                </ul>
+                <div class="plan-cta">Chọn</div>
+            </article>
+        </section>
+
+        <section class="premium-note">
+            <p id="selected-plan-label">Gói đã chọn: <strong id="selected-plan">Chưa chọn</strong></p>
+        </section>
+    </main>
+
+    <script src="Premium.js"></script>
+</body>
+</html>
